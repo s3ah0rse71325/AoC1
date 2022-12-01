@@ -1,0 +1,38 @@
+y=input.split('\n\n')
+max_elf=2
+second_elf=1
+third_elf=0
+max_cal=0
+for i in range(len(y)):
+  elf_list=[int(z) for z in y[i].split('\n')]
+  #print(elf_list)
+  if sum(elf_list)>max_cal:
+    max_cal=sum(elf_list)
+    max_elf=i
+print(max_cal)
+  #print(y[i].split('\n'))
+
+
+  
+
+y=input.split('\n\n')
+first_cal=2
+second_cal=1
+third_cal=0
+for i in range(len(y)):
+  elf_list=[int(z) for z in y[i].split('\n')]
+  if sum(elf_list)>first_cal:
+    third_cal=second_cal
+    second_cal=first_cal
+    first_cal=sum(elf_list)
+  elif sum(elf_list)<first_cal and sum(elf_list)>second_cal:
+    third_cal=second_cal
+    second_cal=sum(elf_list)
+  elif sum(elf_list)<second_cal and sum(elf_list)>third_cal:
+    third_cal=sum(elf_list)
+print(first_cal, second_cal, third_cal)
+sum([first_cal, second_cal, third_cal])
+
+  #print(elf_list)
+
+  #print(y[i].split('\n'))
