@@ -1,0 +1,44 @@
+import string
+import re
+
+lower=[y for y in string.ascii_lowercase]
+upper=[y for y in string.ascii_uppercase]
+alphabet=lower+upper
+priorities=range(1, len(alphabet)+1)
+dict1={}
+for i in range(len(alphabet)):
+  dict1[alphabet[i]]=priorities[i]
+
+print(dict1)
+
+rucksacks=[y for y in input.split('\n')]
+len(rucksacks)
+
+total=0
+for i in range(len(rucksacks)):
+  string=''
+  total_items=len(rucksacks[i])
+  first_half=rucksacks[i][:int(total_items/2)]
+  second_half=rucksacks[i][int(total_items/2):]
+  for letter in first_half:
+    if letter in second_half:
+      string=letter
+  total+=dict1[string]
+total
+
+#P2
+
+groups=[x.strip().split('\n') for x in re.findall('((?:[^\n]+\n?){1,3})', input)]
+total=0
+for group in groups:
+  first_string=''
+  second_string=''
+  for letter in group[0]:
+    if letter in group[1]:
+      first_string+=letter
+  for letter in first_string:
+    if letter in group[2]:
+      second_string=letter
+  total+=dict1[second_string]
+total
+
