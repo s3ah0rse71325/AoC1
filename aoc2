@@ -1,0 +1,58 @@
+#oppo_move=[]
+#my_move=[]
+oppo_move=[y[0] for y in input.split('\n')]
+my_move=[y[-1] for y in input.split('\n')]
+my_score=0
+#print(len(oppo_move), len(my_move))
+for i in range(len(my_move)):
+  if my_move[i]=='X':
+    my_score+=1
+    if oppo_move[i]=='A':
+      my_score+=3
+    elif oppo_move[i]=='C':
+      my_score+=6
+  elif my_move[i]=='Y':
+    my_score+=2
+    if oppo_move[i]=='B':
+      my_score+=3
+    elif oppo_move[i]=='A':
+      my_score+=6
+  elif my_move[i]=='Z':
+    my_score+=3
+    if oppo_move[i]=='C':
+      my_score+=3
+    elif oppo_move[i]=='B':
+      my_score+=6
+print(my_score)
+    
+
+
+results=my_move
+results
+my_score=0
+for i in range(len(results)):
+  if results[i]=='X':
+    if oppo_move[i]=='A':
+      my_score+=3
+    elif oppo_move[i]=='B':
+      my_score+=1
+    elif oppo_move[i]=='C':
+      my_score+=2
+  elif results[i]=='Y':
+    my_score+=3
+    if oppo_move[i]=='A':
+      my_score+=1
+    elif oppo_move[i]=='B':
+      my_score+=2
+    elif oppo_move[i]=='C':
+      my_score+=3
+  elif results[i]=='Z':
+    my_score+=6
+    if oppo_move[i]=='A':
+      my_score+=2
+    elif oppo_move[i]=='B':
+      my_score+=3
+    elif oppo_move[i]=='C':
+      my_score+=1
+print(my_score)
+
