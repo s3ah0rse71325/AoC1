@@ -1,0 +1,32 @@
+pairs=input.split('\n')
+pairs=[x.split(',') for x in pairs]
+pairs
+pairs1=[]
+total=0
+for i in range(len(pairs)):
+  num1=int(pairs[i][0].split('-')[0])
+  num2=int(pairs[i][0].split('-')[1])
+  num3=int(pairs[i][1].split('-')[0])
+  num4=int(pairs[i][1].split('-')[1])
+  #print(num1, num2, num3, num4)
+  if num1<=num3 and num2>=num4:
+    total+=1
+  elif num1>=num3 and num2<=num4:
+    total+=1
+total
+
+#P2
+
+
+total=0
+for i in range(len(pairs)):
+  num1=int(pairs[i][0].split('-')[0])
+  num2=int(pairs[i][0].split('-')[1])
+  num3=int(pairs[i][1].split('-')[0])
+  num4=int(pairs[i][1].split('-')[1])
+  #print(num1, num2, num3, num4)
+  if num1<=num3 and num2>=num3:
+    total+=1
+  elif num1>=num3 and num1<=num4:
+    total+=1
+total
