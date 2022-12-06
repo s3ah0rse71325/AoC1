@@ -1,0 +1,9 @@
+markers=[]
+indices=[]
+for i in range(len(input)):
+  string=input[i:i+14] #4 for part A)
+  #print(string)
+  if len(set(string))==14:
+    markers.append(string)
+    indices.append(i+14)
+print(indices)
